@@ -3,10 +3,13 @@
 Build a data service API for your school work thus far.
 
 1. Set up a CRUD application for your work.
+
 *Specs
+
 **Should let you add assignments you've worked on, storing information such as the assignment description and GitHub link (among other things)
 **Should let you associate links to articles and videos with assignments
 **Should let you indicate if you worked on a project with others (and, if so, whom)
+
 *You'll need multiple resources (a.k.a. "models") for this, since there are some one-to-many relationships inherent in the application.
 *Get the CRUD application done as quickly as possible. No CSS. This is for your own admin purposes only.
 
