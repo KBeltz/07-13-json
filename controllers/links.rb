@@ -2,7 +2,7 @@
 # links - menu
 # ---------------------------------------------------------------------
 
-get "/main_links_menu" do
+get "/main_links" do
   erb :"/links/main_links"
 end
 
@@ -26,7 +26,7 @@ get "/create_link" do
   # if link.valid?(params["name"], params["description"])
   #   erb :"/links/add_link_error"
   # else
-    Link.add_to_database("name" => params["name"], "description" => params["description"])
+    Link.add_to_database("url" => params["url"])
     erb :"/links/success"
   # end
 end
