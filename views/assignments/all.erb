@@ -1,0 +1,18 @@
+<h3>View Assignments</h3>
+
+<TABLE BORDER="5">
+  <TH>ID</TH>
+  <TH>Assignment Name</TH>
+  <TH>Description</TH>
+
+  <% Assignment.all.each do |item| %>
+
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD>
+      <TD><%= "#{item.name}" %></TD>
+      <TD><%= "#{item.description}" %></TD>
+    </TR>
+
+  <% end %>
+
+</TABLE>

@@ -1,6 +1,9 @@
 require "pry"
 require "sinatra"
+require "sinatra/json"
 require "sinatra/reloader"
+require "HTTParty"
+set :bind, '0.0.0.0'
 
 # SQL/Database
 require "sqlite3"
