@@ -1,0 +1,19 @@
+<h3>Edit link</h3>
+
+  <p><h4>Choose an link to edit:</h4></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>URL</TH>
+    <TH></TH>
+
+    <% Link.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/edit_link_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.url}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

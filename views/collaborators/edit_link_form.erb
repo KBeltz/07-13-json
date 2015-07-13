@@ -1,0 +1,12 @@
+<h3>Edit link Form</h3>
+
+<form action="/edit_link/">
+
+  <p><h4>Update link as necessary.</h4></p>
+  <p>URL: <input type="text" name="url" value="<%= @new_link.url %>"></p>
+  <p>Assignment ID: <input type="number" name="assignment_id" value="<%= @new_link.assignment_id %>"></p>
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
+
+  <p><input type="submit" value="edit link"></p>
+</form>

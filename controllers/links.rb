@@ -2,7 +2,7 @@
 # links - menu
 # ---------------------------------------------------------------------
 
-get "/main_links" do
+get "/main_links_menu" do
   erb :"/links/main_links"
 end
 
