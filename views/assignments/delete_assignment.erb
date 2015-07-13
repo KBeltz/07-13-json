@@ -1,0 +1,8 @@
+<h3>Delete Assignment</h3>
+
+  <p><h4>Choose a assignment to delete:</h4></p>
+  <% Assignment.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_assignment/<%= item.id %>"> Name: <%= item.name %> / Description: <%= item.description %></a></li>
+    </ul>
+      <% end %>
