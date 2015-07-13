@@ -1,0 +1,12 @@
+<h3>Edit collaborator Form</h3>
+
+<form action="/edit_collaborator/">
+
+  <p><h4>Update collaborator as necessary.</h4></p>
+  <p>URL: <input type="text" name="name" value="<%= @new_collaborator.name %>"></p>
+  <p>Assignment ID: <input type="number" name="assignment_id" value="<%= @new_collaborator.assignment_id %>"></p>
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
+
+  <p><input type="submit" value="edit collaborator"></p>
+</form>

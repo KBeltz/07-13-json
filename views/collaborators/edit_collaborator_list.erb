@@ -1,0 +1,19 @@
+<h3>Edit collaborator</h3>
+
+  <p><h4>Choose an collaborator to edit:</h4></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>Name</TH>
+    <TH></TH>
+
+    <% Collaborator.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/edit_collaborator_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.name}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

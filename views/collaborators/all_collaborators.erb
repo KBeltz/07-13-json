@@ -1,0 +1,16 @@
+<h3>View Collaborators</h3>
+
+<TABLE BORDER="5">
+  <TH>ID</TH>
+  <TH>name</TH>
+
+  <% Collaborator.all.each do |item| %>
+
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD>
+      <TD><%= "#{item.name}" %></TD>
+    </TR>
+
+  <% end %>
+
+</TABLE>

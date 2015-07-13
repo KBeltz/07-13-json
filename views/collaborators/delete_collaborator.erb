@@ -1,0 +1,8 @@
+<h3>Delete collaborator</h3>
+
+  <p><h4>Choose a collaborator to delete:</h4></p>
+  <% Collaborator.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_collaborator/<%= item.id %>"> URL: <%= item.name %> </a></li>
+    </ul>
+      <% end %>
