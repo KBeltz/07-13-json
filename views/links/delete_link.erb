@@ -1,0 +1,8 @@
+<h3>Delete link</h3>
+
+  <p><h4>Choose a link to delete:</h4></p>
+  <% Link.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_link/<%= item.id %>"> URL: <%= item.url %> </a></li>
+    </ul>
+      <% end %>

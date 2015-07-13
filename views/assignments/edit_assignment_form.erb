@@ -1,0 +1,12 @@
+<h3>Edit Assignment Form</h3>
+
+<form action="/edit_assignment/">
+
+  <p><h4>Update assignment as necessary.</h4></p>
+  <p>Name: <input type="text" name="name" value="<%= @new_assignment.name %>"></p>
+  <p>Description: <input type="text" name="description" value="<%= @new_assignment.description %>"></p>
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
+
+  <p><input type="submit" value="edit assignment"></p>
+</form>

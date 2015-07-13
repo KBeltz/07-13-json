@@ -1,0 +1,21 @@
+<h3>Edit Assignment</h3>
+
+  <p><h4>Choose an assignment to edit:</h4></p>
+
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH>Name</TH>
+    <TH>Description</TH>
+    <TH></TH>
+
+    <% Assignment.all.each do |item| %>
+
+      <TR>
+        <TD><a href='/edit_assignment_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.name}" %></TD>
+        <TD><%= "#{item.description}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>

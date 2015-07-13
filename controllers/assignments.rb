@@ -2,7 +2,6 @@
 # assignments - menu
 # ---------------------------------------------------------------------
 
-assignments menu
 get "/main_assignments" do
   erb :"/assignments/main_assignments"
 end
@@ -24,12 +23,12 @@ end
 #
 # Adds assignment to table
 get "/create_assignment" do
-  if assignment.valid?(params["name"], params["description"])
-    erb :"/assignments/add_assignment_error"
-  else
-    assignment.add_to_database("name" => params["name"], "description" => params["description"])
+  # if assignment.valid?(params["name"], params["description"])
+  #   erb :"/assignments/add_assignment_error"
+  # else
+    Assignment.add_to_database("name" => params["name"], "description" => params["description"])
     erb :"/assignments/success"
-  end
+  # end
 end
 
 # ---------------------------------------------------------------------
@@ -53,7 +52,7 @@ end
 
 # Returns user profile
 get "/search_by_id/" do
-  @new_assignment = assignment.find(params["id"])
+  @new_assignment = Assignment.find(params["id"])
   erb :"/assignments/search_by_id"
 end
 
@@ -68,7 +67,7 @@ end
 
 # edit assignments form
 get "/edit_assignment_form/:x" do
-  @new_assignment = assignment.find(params["x"])
+  @new_assignment = Assignment.find(params["x"])
   erb :"/assignments/edit_assignment_form"
 end
 
@@ -76,7 +75,7 @@ end
 #
 # Updates the item in the appropriate table of the database
 get "/edit_assignment/" do
-  @new_assignment = assignment.find(params["x"])
+  @new_assignment = Assignment.find(params["x"])
   @new_assignment.name = params["name"]
   @new_assignment.description = params["description"]
   @new_assignment.save
@@ -93,7 +92,7 @@ get "/delete_assignments_form" do
 end
 
 get "/delete_assignment/:x" do
-  @specific_assignment = assignment.find(params["x"])
+  @specific_assignment = Assignment.find(params["x"])
   @specific_assignment.delete_row
 
   erb :"/assignments/success"
