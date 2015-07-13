@@ -11,8 +11,8 @@ class Link
 
   # Initializes a new Assignment object
   #
-  # id  - Integer id primary key created in the 'assignments' table
-  # url - String containing the name of the assignment
+  # id  - Integer id primary key created in the 'links' table
+  # url - String containing the name of the link
   #
   # Returns an Link object
 
