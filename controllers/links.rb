@@ -15,17 +15,17 @@ get "/create_link_form" do
   erb :"/links/create_link_form"
 end
 
-# get "/create_link_error" do
-#   erb :"/links/create_link_error"
-# end
+get "/create_link_error" do
+  erb :"/links/create_link_error"
+end
 
 # Gets parameters from add_link_form.
 #
 # Adds link to table
 get "/create_link" do
-  # if link.valid?(params["name"], params["description"])
-  #   erb :"/links/add_link_error"
-  # else
+  if Link.valid?(params["url"], params["assignment_id"])
+    erb :"/links/add_link_error"
+  else
     Link.add_to_database("url" => params["url"])
     erb :"/links/success"
   # end
@@ -41,9 +41,9 @@ get "/read_links_menu" do
 end
 
 # Returns a list of all rows in the links table.
-# get "/view_links" do
-#   erb :"/links/view_links"
-# end
+get "/view_links" do
+  erb :"/links/view_links"
+end
 
 # form to enter link id
 get "/search_by_id_form" do

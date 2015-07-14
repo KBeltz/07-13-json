@@ -23,7 +23,7 @@ end
 #
 # Adds assignment to table
 get "/create_assignment" do
-  if assignment.valid?(params["name"], params["description"])
+  if Assignment.valid?(params["name"], params["description"])
     erb :"/assignments/add_assignment_error"
   else
     Assignment.add_to_database("name" => params["name"], "description" => params["description"])
