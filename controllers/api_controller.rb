@@ -1,6 +1,7 @@
 # JSON stuff
 
  # see all assignments
+ # currently only showing the descriptions
  get "/api/assignments" do
    assignments = Assignment.all
    json_array = []

@@ -24,10 +24,12 @@ class Assignment
     @description = options["description"]
   end
 
+  # Converting to json format
   def json_format
     hash = {}
     hash["id"] = self.id
     hash["name"] = self.name
     hash["description"] = self.description
+    hash
   end
 end
