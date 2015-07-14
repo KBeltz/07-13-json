@@ -15,20 +15,12 @@ get "/create_collaborator_form" do
   erb :"/collaborators/create_collaborator_form"
 end
 
-get "/create_collaborator_error" do
-  erb :"/collaborators/create_collaborator_error"
-end
-
 # Gets parameters from add_collaborator_form.
 #
 # Adds collaborator to table
 get "/create_collaborator" do
-  if Collaborator.valid?(params["name"], params["description"])
-    erb :"/collaborators/add_collaborator_error"
-  else
-    Collaborator.add_to_database("name" => params["name"])
-    erb :"/collaborators/success"
-  # end
+  Collaborator.add_to_database("name" => params["name"])
+  erb :"/collaborators/success"
 end
 
 # ---------------------------------------------------------------------
@@ -40,7 +32,7 @@ get "/read_collaborators_menu" do
   erb :"/collaborators/read_collaborators_menu"
 end
 
-Returns a list of all rows in the collaborators table.
+# Returns a list of all rows in the collaborators table.
 get "/view_collaborators" do
   erb :"/collaborators/view_collaborators"
 end

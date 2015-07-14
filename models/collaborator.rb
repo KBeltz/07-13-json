@@ -23,16 +23,4 @@ class Collaborator
     @name = options["name"]
 
   end
-
-  # method to validate collaborator profiles before they are added to the database
-  #
-  # name - String containing the name of the collaborator
-  #
-  # Returns boolean
-  def self.valid?(name, assignment_id)
-    if name.empty? || assignment_id.empty?
-      true
-    end
-  end
-
 end

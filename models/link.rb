@@ -23,16 +23,4 @@ class Link
     @url = options["url"]
 
   end
-
-  # method to validate link profiles before they are added to the database
-  #
-  # url - String containing a url
-  #
-  # Returns boolean
-  def self.valid?(url, assignment_id)
-    if url.empty? || assignment_id.empty?
-      true
-    end
-  end
-
 end

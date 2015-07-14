@@ -15,20 +15,12 @@ get "/create_link_form" do
   erb :"/links/create_link_form"
 end
 
-get "/create_link_error" do
-  erb :"/links/create_link_error"
-end
-
 # Gets parameters from add_link_form.
 #
 # Adds link to table
 get "/create_link" do
-  if Link.valid?(params["url"], params["assignment_id"])
-    erb :"/links/add_link_error"
-  else
-    Link.add_to_database("url" => params["url"])
-    erb :"/links/success"
-  # end
+  Link.add_to_database("url" => params["url"])
+  erb :"/links/success"
 end
 
 # ---------------------------------------------------------------------

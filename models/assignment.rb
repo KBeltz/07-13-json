@@ -25,17 +25,4 @@ class Assignment
     @description = options["description"]
 
   end
-
-  # method to validate assignment profiles before they are added to the database
-  #
-  # name         - String containing the name of the assignment
-  # description  - String containing the description of the assignment
-  #
-  # Returns boolean
-  def self.valid?(name, description)
-    if name.empty? || description.empty?
-      true
-    end
-  end
-
 end
