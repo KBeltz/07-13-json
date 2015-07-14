@@ -48,14 +48,6 @@
    json json_array
  end
 
- # not working
- # get "/api/assignments/new/:name/:github" do
- #   assignment = Assignment.add({"assignment_name" => params["name"], "repository" => params["github"]})
- #   json_array = []
- #   json_array << assignment.json_format
- #   json json_array
- # end
-
  # delete an assignment
  # :id is the assignment's id - INTEGER
  get "/api/assignments/delete/:id" do
