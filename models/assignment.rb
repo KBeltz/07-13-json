@@ -38,4 +38,34 @@ class Assignment
     end
   end
 
+  # Join
+  #
+  # Returns applicable rows of assignments table and links table joined together
+  # TODO: Which kind of Join? should it be a join?
+  def link_join
+    DATABASE.execute("SELECT assignments.name FROM assignments JOIN links ON links.assignment_id = assignments.id WHERE assignments.id = #{id}")
+  end
+
+  # Join
+  #
+  # Returns applicable rows of assignments table and collaborators table joined together
+  # TODO: Which kind of Join? should it be a join?
+  def collaborator_join
+    DATABASE.execute("SELECT assignments.name FROM assignments JOIN collaborators ON collaborators.assignment_id = assignments.id WHERE assignment.id = #{id}")
+  end
+
+  # Bridge table for assignments and collaborators
+  #
+  # Returns ??
+  def link_bridge
+    DATABASE.execute("INSERT INTO assignments_links (assignment_id, link_id) VALUES (#{values_for_sql});")
+  end
+
+  # Bridge table for assignments and collaborators
+  #
+  # Returns ??
+  def collaborator_bridge
+    DATABASE.execute("INSERT INTO assignments_collaborators (assignment_id, collaborator_id) VALUES (#{values_for_sql});")
+  end
+
 end

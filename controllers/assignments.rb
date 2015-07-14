@@ -15,20 +15,20 @@ get "/create_assignment_form" do
   erb :"/assignments/create_assignment_form"
 end
 
-# get "/create_assignment_error" do
-#   erb :"/assignments/create_assignment_error"
-# end
+get "/create_assignment_error" do
+  erb :"/assignments/add_assignment_error"
+end
 
 # Gets parameters from add_assignment_form.
 #
 # Adds assignment to table
 get "/create_assignment" do
-  # if assignment.valid?(params["name"], params["description"])
-  #   erb :"/assignments/add_assignment_error"
-  # else
+  if assignment.valid?(params["name"], params["description"])
+    erb :"/assignments/add_assignment_error"
+  else
     Assignment.add_to_database("name" => params["name"], "description" => params["description"])
     erb :"/assignments/success"
-  # end
+  end
 end
 
 # ---------------------------------------------------------------------
@@ -39,11 +39,6 @@ end
 get "/read_assignments_menu" do
   erb :"/assignments/read_assignments_menu"
 end
-
-# Returns a list of all rows in the assignments table.
-# get "/view_assignments" do
-#   erb :"/assignments/view_assignments"
-# end
 
 # form to enter assignment id
 get "/search_by_id_form" do

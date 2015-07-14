@@ -1,1 +1,17 @@
-Read links menu
+Links
+
+<TABLE BORDER="5">
+  <TH>ID</TH>
+  <TH>URL</TH>
+  <TH></TH>
+
+  <% Link.all.each do |item| %>
+
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD>
+      <TD><%= "#{item.url}" %></TD>
+    </TR>
+
+  <% end %>
+
+</TABLE>

@@ -1,1 +1,17 @@
-Read collaborators menu
+Collaborators
+
+<TABLE BORDER="5">
+  <TH>ID</TH>
+  <TH>Name</TH>
+  <TH></TH>
+
+  <% Collaborator.all.each do |item| %>
+
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD>
+      <TD><%= "#{item.name}" %></TD>
+    </TR>
+
+  <% end %>
+
+</TABLE>

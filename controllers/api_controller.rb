@@ -1,3 +1,5 @@
+# JSON stuff
+
 get "/api/assignments" do
   erb :"/assignments/all"
 end

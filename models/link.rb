@@ -29,8 +29,8 @@ class Link
   # url - String containing a url
   #
   # Returns boolean
-  def self.valid?(url)
-    if url.empty?
+  def self.valid?(url, assignment_id)
+    if url.empty? || assignment_id.empty?
       true
     end
   end

@@ -29,8 +29,8 @@ class Collaborator
   # name - String containing the name of the collaborator
   #
   # Returns boolean
-  def self.valid?(name)
-    if name.empty?
+  def self.valid?(name, assignment_id)
+    if name.empty? || assignment_id.empty?
       true
     end
   end

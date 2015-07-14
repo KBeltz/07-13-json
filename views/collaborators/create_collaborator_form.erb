@@ -4,7 +4,23 @@
 
   <p>Name: <input type="name" name="name" value="<%= params["name"] %>"></p>
 
-  <!-- <p>Assignment ID: <input type="number" name="assignment_id" value="<%= params["assignment_id"] %>"></p> -->
+  <TABLE BORDER="5">
+    <TH>ID</TH>
+    <TH> Assignment Name</TH>
+    <TH></TH>
+
+    <% Assignment.all.each do |item| %>
+
+      <TR>
+        <TD><%= "#{item.id}" %>.</TD>
+        <TD><%= "#{item.name}" %></TD>
+      </TR>
+
+    <% end %>
+
+  </TABLE>
+
+  <p>Assignment ID: <input type="number" name="assignment_id" value="<%= params["assignment_id"] %>"></p>
 
   <input type="submit" value="add collaborator">
 
