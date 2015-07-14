@@ -18,11 +18,16 @@ class Assignment
   # Returns an Assignment object
 
   def initialize(options = {})
-
-    # Example: {"id" => 1, "name" => "JS Atomics", "description" => "JS mini-assigments"}
+    # Example: {"id" => 1, "name" => "JS Atomics", "description" => "JS mini-assignments"}
     @id = options["id"]
     @name = options["name"]
     @description = options["description"]
+  end
 
+  def json_format
+    hash = {}
+    hash["id"] = self.id
+    hash["name"] = self.name
+    hash["description"] = self.description
   end
 end
