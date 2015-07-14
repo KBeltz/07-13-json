@@ -1,5 +1,4 @@
  # see all assignments
- # currently only showing the descriptions
  get "/api/assignments" do
    assignments = Assignment.all
    json_array = []
@@ -22,6 +21,18 @@
   #  json_array["collaborators"] = collaborator_names
    json json_array
  end
+
+ # delete an assignment
+ # :id is the assignment's id - INTEGER
+ # needs a redirect
+ get "/api/assignments/delete/:id" do
+   assignment = Assignment.find(params["id"].to_i)
+   assignment.delete_row
+  #  assignment.delete_collaborations
+   json assignment.json_format
+ end
+
+##############################################################################
 
  # see all collaborators
  get "/api/collaborators" do
@@ -46,14 +57,7 @@
    json json_array
  end
 
- # delete an assignment
- # :id is the assignment's id - INTEGER
- get "/api/assignments/delete/:id" do
-   assignment = Assignment.find(params["id"].to_i)
-   assignment.delete
-   assignment.delete_collaborations
-   json assignment.json_format
- end
+
 
  # add a collaborator
  # :name is the collaborator's name
