@@ -1,5 +1,3 @@
-# JSON stuff
-
  # see all assignments
  # currently only showing the descriptions
  get "/api/assignments" do
