@@ -17,7 +17,7 @@ Build a data service API for your school work thus far.
     - `get "/api/assignments"` - returns all assignments
     - `get "/api/assignments/:id"` - returns only information about the assignment with the given ID, but includes everything about it (including links to articles/videos and information about group members)
   * Your partner should be able to access your assignments' information using HTTParty.
-    - You'll need to add set :bind, '0.0.0.0' to your project (anywhere after require "sinatra") so that your partner can access your website using your computer's IP address.
+    - You'll need to add set `:bind, '0.0.0.0'` to your project (anywhere after `require "sinatra"`) so that your partner can access your website using your computer's IP address.
     - Do you need to use 0.0.0.0 or your actual IP address? Good question. tias
 
 3. Add a JSON API (Part 2)
